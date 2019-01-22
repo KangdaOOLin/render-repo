@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RenderFunction :render="render" />
+    <RenderFunction :renderFn="renderFn" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       value: 123,
-      render: h => h("div", [h("strong", this.value.toString())])
+      renderFn: h => h("div", [h("strong", this.value.toString())])
     };
   },
 

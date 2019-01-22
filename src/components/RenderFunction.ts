@@ -4,13 +4,13 @@ export default Vue.extend({
   name: "RenderFunction",
   functional: true,
   props: {
-    render: Function,
+    renderFn: Function,
     params: {
       type: Object,
       default: () => ({})
     }
   },
   render(h, ctx) {
-    return ctx.props.render(h, ctx.props.params);
+    return ctx.props.renderFn(h, ctx.props.params);
   }
 });

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RenderFunction :render="render" />
+    <RenderFunction :renderFn="renderFn" />
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default Vue.extend({
   data() {
     return {
       value: 123,
-      render: (h: CreateElement) => {
+      renderFn: (h: CreateElement) => {
         const self = this as any;
         return h("div", [h("strong", self.value.toString())]);
       }

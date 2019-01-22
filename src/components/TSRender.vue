@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RenderFunction :render="render" />
+    <RenderFunction :renderFn="renderFn" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import RenderFunction from "./RenderFunction";
 export default class TSRender extends Vue {
   private value = 123;
 
-  private render = (h: CreateElement): VNode => {
+  private renderFn = (h: CreateElement): VNode => {
     return h("div", [h("strong", this.value.toString())]);
   };
 

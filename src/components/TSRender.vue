@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { CreateElement } from "vue";
+import { CreateElement, VNode } from "vue";
 import RenderFunction from "./RenderFunction";
 
 @Component({
@@ -15,7 +15,7 @@ import RenderFunction from "./RenderFunction";
 export default class TSRender extends Vue {
   private value = 123;
 
-  private render = (h: CreateElement) => {
+  private render = (h: CreateElement): VNode => {
     return h("div", [h("strong", this.value.toString())]);
   };
 
